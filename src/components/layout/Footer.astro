@@ -1,0 +1,66 @@
+---
+import { Github, Twitter, Linkedin } from 'lucide-astro';
+
+const navLinks = [
+  { name: 'Inicio', href: '#home' },
+  { name: 'Sobre Nosotros', href: '#about' },
+  { name: 'Blog', href: '#blog' },
+  { name: 'Contacto', href: '#contact' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/10 bg-card/30">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 gap-8 text-center md:grid-cols-3 md:text-left">
+      <div>
+        <a href="/" class="font-headline text-2xl font-bold">
+          Kaizen
+        </a>
+        <p class="mt-2 text-sm text-muted-foreground">
+          Mejora continua para el mundo digital.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-headline font-semibold tracking-wider uppercase">
+          Links Rápidos
+        </h4>
+        <ul class="mt-4 space-y-2">
+          {navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-muted-foreground transition-colors hover:text-primary"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-headline font-semibold tracking-wider uppercase">
+          Síguenos
+        </h4>
+        <div class="mt-4 flex justify-center gap-4 md:justify-start">
+          <a href="#" aria-label="Twitter">
+            <Twitter class="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+          </a>
+          <a href="#" aria-label="GitHub">
+            <Github class="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <Linkedin class="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-white/10 pt-8 text-center text-sm text-muted-foreground">
+      <p>&copy; {year} Kaizen Digital. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

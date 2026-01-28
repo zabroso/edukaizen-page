@@ -1,0 +1,22 @@
+{
+  "placeholderImages": [
+    {
+      "id": "ia-educacion",
+      "description": "A futuristic image representing artificial intelligence in an educational context.",
+      "imageUrl": "https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YXJ0aWZpY2lhbCUyMGludGVsbGlnZW5jZSUyMGVkdWNhdGlvbnxlbnwwfHx8fDE3Njk1NDkyNTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "artificial intelligence education"
+    },
+    {
+      "id": "optimizacion-aula",
+      "description": "A modern, optimized classroom with technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1577896851231-70ef18881754?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjbGFzc3Jvb218ZW58MHx8fHwxNzY5NDQ5MjEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern classroom"
+    },
+    {
+      "id": "optimizacion-procesos",
+      "description": "An abstract representation of process optimization with flowcharts and graphs.",
+      "imageUrl": "https://images.unsplash.com/photo-1591381287254-b3349c60bf9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29ya2Zsb3clMjBjaGFydHxlbnwwfHx8fDE3Njk1MzA0MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workflow chart"
+    }
+  ]
+}

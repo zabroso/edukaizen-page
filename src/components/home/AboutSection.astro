@@ -1,0 +1,58 @@
+---
+import { Target, Eye, Users } from 'lucide-astro';
+
+const aboutData = [
+  {
+    Icon: Target,
+    title: 'Misión',
+    description:
+      'Empoderar a individuos y organizaciones a través de la educación y la tecnología, fomentando una cultura de mejora continua.',
+  },
+  {
+    Icon: Eye,
+    title: 'Visión',
+    description:
+      'Ser líderes en la transformación digital educativa, creando un ecosistema de aprendizaje innovador, accesible y en constante evolución.',
+  },
+  {
+    Icon: Users,
+    title: 'Quiénes Somos',
+    description:
+      'Un equipo de expertos apasionados por la tecnología, la pedagogía y el crecimiento personal, dedicados a optimizar tu potencial.',
+  },
+];
+---
+
+<section id="about" class="py-20 lg:py-32">
+  <div class="container mx-auto px-4">
+    <div class="mb-12 text-center">
+      <h2 class="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
+        Sobre Kaizen
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+        Nuestra filosofía se basa en tres pilares fundamentales.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      {aboutData.map((item) => (
+        <div
+          class="transform rounded-lg border border-white/10 bg-card/50 text-center backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20"
+        >
+          <div class="flex flex-col items-center p-6">
+            <item.Icon class="h-10 w-10 text-primary" />
+            <h3 class="mt-4 font-headline text-2xl font-semibold">
+              {item.title}
+            </h3>
+          </div>
+
+          <div class="px-6 pb-6">
+            <p class="text-muted-foreground">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

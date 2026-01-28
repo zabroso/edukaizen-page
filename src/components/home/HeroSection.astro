@@ -1,0 +1,64 @@
+---
+import EduIcon from '@/components/icons/EduIcon.astro';
+import KaiIcon from '@/components/icons/KaiIcon.astro';
+import ZenIcon from '@/components/icons/ZenIcon.astro';
+
+const heroIcons = [
+  {
+    icon: EduIcon,
+    title: 'EDU',
+  },
+  {
+    icon: KaiIcon,
+    title: 'KAI',
+  },
+  {
+    icon: ZenIcon,
+    title: 'ZEN',
+  },
+];
+---
+
+<section
+  id="home"
+  class="relative flex min-h-screen items-center justify-center overflow-hidden py-20 lg:py-32"
+>
+  <div class="absolute inset-0 -z-20 bg-background"></div>
+  <div
+    class="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(240,128,0,0.15),rgba(255,255,255,0))]"
+  ></div>
+
+  <div class="container mx-auto px-4 text-center">
+    <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+      {heroIcons.map((item) => (
+        <a
+          href="#"
+          class="group relative flex aspect-square items-center justify-center p-4"
+        >
+          <div
+            class="absolute inset-0 rounded-lg border border-transparent bg-card/50 transition-all duration-300 group-hover:border-primary/50 group-hover:bg-black/50 group-hover:backdrop-blur-sm"
+          ></div>
+
+          <div
+            class="text-primary transition-all duration-300 group-hover:scale-90 group-hover:opacity-20 group-hover:blur-sm"
+          >
+            <item.icon class="h-28 w-28" />
+          </div>
+
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          >
+            <span class="font-headline text-2xl font-bold tracking-wider text-foreground">
+              {item.title}
+            </span>
+            <span
+              class="mt-2 text-lg font-semibold text-primary underline underline-offset-4"
+            >
+              go to blog
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
