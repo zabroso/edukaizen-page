@@ -9,3 +9,8 @@
   --card: 222 47% 15%;
   --muted: 215 20% 65%;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+

@@ -1,19 +1,26 @@
 ---
 import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
+import GlobalBackground from "@/components/layout/GlobalBackground.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <slot name="head" />
   </head>
-  <body class="bg-background text-foreground font-body">
+
+  <body class="relative bg-background text-foreground font-body antialiased">
+    <GlobalBackground />
+
     <Header />
-    <main>
+
+    <main class="relative z-10">
       <slot />
     </main>
+
     <Footer />
   </body>
 </html>
