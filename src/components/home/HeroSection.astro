@@ -2,11 +2,14 @@
 import EduIcon from '@/components/icons/EduIcon.astro';
 import KaiIcon from '@/components/icons/KaiIcon.astro';
 import ZenIcon from '@/components/icons/ZenIcon.astro';
+import eduIcon from '@/assets/edu.svg?raw';
+import kaiIcon from '@/assets/kai.svg?raw';
+import zenIcon from "@/assets/Zen.svg?raw";
 
 const heroIcons = [
-  { icon: EduIcon, title: 'EDU' },
-  { icon: KaiIcon, title: 'KAI' },
-  { icon: ZenIcon, title: 'ZEN' },
+  { icon: eduIcon, title: 'EDU' },
+  { icon: kaiIcon, title: 'KAI' },
+  { icon: zenIcon, title: 'ZEN' },
 ];
 ---
 
@@ -39,7 +42,7 @@ const heroIcons = [
             class="relative z-10 text-primary blur-0 transition-all duration-300
                    group-hover:scale-90 group-hover:opacity-20 group-hover:blur-sm"
           >
-            <item.icon class="h-28 w-28" />
+            <span class="h-12 w-12 text-primary" set:html={item.icon} />
           </div>
 
           <!-- Texto hover -->
