@@ -1,0 +1,61 @@
+---
+export interface Props {
+  name: string;
+  phone: string;
+  email: string;
+  linkedin: string;
+}
+
+const { name, phone, email, linkedin } = Astro.props;
+---
+
+<address
+  class="not-italic rounded-xl border border-white/10 bg-card/50 p-6
+         text-left transition hover:border-primary/40"
+>
+  <h3 class="text-lg font-bold text-foreground mb-2">
+    {name}
+  </h3>
+
+  <p class="mb-4 text-sm leading-relaxed text-foreground/80">
+    Profesional con experiencia en procesos de <strong>educación</strong>,
+    <strong>mejora continua</strong> y <strong>certificaciones</strong>.
+    Enfocado en acompañar a personas y organizaciones en la mejora de sus
+    prácticas, fortaleciendo capacidades y asegurando estándares de calidad
+    mediante soluciones claras, prácticas y confiables.
+  </p>
+
+  <ul class="space-y-2 text-sm">
+    <!-- Teléfono -->
+    <li>
+      <a
+        href={`tel:${phone}`}
+        class="text-foreground/80 hover:text-primary transition"
+      >
+        📞 {phone}
+      </a>
+    </li>
+
+    <!-- Email -->
+    <li>
+      <a
+        href={`mailto:${email}`}
+        class="text-foreground/80 hover:text-primary transition"
+      >
+        ✉️ {email}
+      </a>
+    </li>
+
+    <!-- LinkedIn -->
+    <li>
+      <a
+        href={linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-foreground/80 hover:text-primary transition"
+      >
+        💼 LinkedIn
+      </a>
+    </li>
+  </ul>
+</address>

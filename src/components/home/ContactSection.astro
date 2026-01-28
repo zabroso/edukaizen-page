@@ -1,9 +1,16 @@
 ---
-import ContactForm from "./ContactForm.astro"
+import ContactForm from "./ContactForm";
+import ContactCard from "./ContactCard.astro";
 ---
 
 <section id="contact" class="py-32 bg-card/20">
   <div class="container grid lg:grid-cols-2 gap-12">
-    <ContactForm />
+    <ContactForm client:load />
+    <ContactCard
+      name="Juan Pérez"
+      phone="+56 9 1234 5678"
+      email="juan.perez@email.com"
+      linkedin="https://www.linkedin.com/in/juanperez"
+    />
   </div>
 </section>
