@@ -1,11 +1,44 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import UnderConstruction from "@/components/utils/UnderConstruction.astro";
+import SideBar from "@/components/utils/SideBar.astro";
+import KaiConceptsSection from "@/components/blog/KaiConceptsSection.astro";
+import InsightsSection from "@/components/utils/InsightsSection.astro";
+import ContactSection from "@/components/utils/ContactSection.astro";
 ---
 
 <Layout>
-  <UnderConstruction
-    title="Blog en construcción"
-    subtitle="Pronto compartiremos artículos, experiencias y recursos sobre educación, mejora continua y certificaciones."
-  />
+  <!-- Header -->
+  <header id="top" class="mx-auto max-w-7xl px-6 pt-40 pb-12">
+    <h1 class="text-4xl font-bold tracking-tight text-foreground">KAI</h1>
+    <p class="mt-2 max-w-2xl text-foreground/70">
+      Decisiones claras y mejora práctica aplicadas a educación, certificaciones
+      y mejora continua.
+    </p>
+  </header>
+
+  <!-- Layout -->
+  <section class="mx-auto flex max-w-7xl gap-10 px-6 pb-20">
+    <SideBar
+      items={[
+        { label: "Kai", href: "#top" },
+        { label: "Conceptos", href: "#conceptos" },
+        { label: "Blog", href: "#blog" },
+        { label: "Contacto", href: "#contacto" },
+      ]}
+    />
+
+    <main class="flex-1">
+      <section id="conceptos">
+        <KaiConceptsSection />
+      </section>
+
+      <section id="blog">
+        <InsightsSection />
+      </section>
+
+      <section id="contacto">
+        <ContactSection />
+      </section>
+    </main>
+  </section>
 </Layout>

@@ -1,0 +1,84 @@
+---
+const concepts = [
+  {
+    title: "Optimización en Éxito en el Porcentaje",
+    description:
+      "Aplicación de métricas clave y mejora continua para aumentar la efectividad en procesos educativos y organizacionales.",
+    tag: "KAI",
+  },
+  {
+    title: "Este Indicador de Calidad Acreditada",
+    description:
+      "Indicadores alineados a estándares de certificación y aseguramiento de la calidad institucional.",
+    tag: "Certificación",
+  },
+  {
+    title: "Cómo trabajan la auditoría en Desarrollo Ágil",
+    description:
+      "Integración de prácticas ágiles con procesos de evaluación y control continuo.",
+    tag: "Agilidad",
+  },
+  {
+    title: "Frameworks +20% Desarrollo Ágil Eficiente",
+    description:
+      "Uso estratégico de frameworks ágiles para maximizar resultados y reducir fricción operativa.",
+    tag: "Frameworks",
+  },
+  {
+    title: "Implementación de Ideas aplicadas Kaizen",
+    description:
+      "Mejora incremental aplicada a contextos educativos y de gestión del cambio.",
+    tag: "Kaizen",
+  },
+  {
+    title: "Aprendizaje Activo y Evaluación Continua",
+    description:
+      "Diseño de experiencias formativas centradas en evidencia y retroalimentación.",
+    tag: "Educación",
+  },
+];
+---
+
+<section id="conceptos" class="relative">
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    {concepts.map((item) => (
+      <article
+        class="group relative overflow-hidden rounded-xl border border-border bg-background/60 p-6 backdrop-blur transition hover:border-orange-500/40"
+      >
+        <!-- Decoración naranja -->
+        <div
+          class="absolute -right-6 -top-6 h-20 w-20 rotate-45 bg-orange-500/20 blur-2xl transition group-hover:bg-orange-500/30"
+        ></div>
+
+        <!-- Tag -->
+        <span
+          class="mb-3 inline-block rounded-md bg-orange-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-500"
+        >
+          {item.tag}
+        </span>
+
+        <!-- Título -->
+        <h3
+          class="mt-2 text-lg font-semibold leading-snug text-foreground transition group-hover:text-orange-400"
+        >
+          {item.title}
+        </h3>
+
+        <!-- Descripción -->
+        <p class="mt-3 text-sm text-foreground/70">
+          {item.description}
+        </p>
+
+        <!-- CTA -->
+        <div class="mt-5">
+          <a
+            href="#"
+            class="text-sm font-medium text-orange-500 transition hover:text-orange-400"
+          >
+            Leer más →
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

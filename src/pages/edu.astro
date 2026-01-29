@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import ConceptsSection from "@/components/blog/ConceptsSection.astro";
-import SideBar from "@/components/blog/SideBar.astro";
+import SideBar from "@/components/utils/SideBar.astro";
 import InsightsSection from "@/components/utils/InsightsSection.astro";
 import ContactSection from "@/components/utils/ContactSection.astro";
 ---
@@ -24,7 +24,14 @@ import ContactSection from "@/components/utils/ContactSection.astro";
   </header>
 
   <section class="mx-auto flex max-w-7xl gap-10 px-6 pb-16">
-    <SideBar />
+    <SideBar
+      items={[
+        { label: "Educación", href: "#top" },
+        { label: "Conceptos", href: "#conceptos" },
+        { label: "Blog", href: "#blog" },
+        { label: "Contacto", href: "#contacto" },
+      ]}
+    />
     <main class="flex-1 space-y-24">
       <section id="conceptos">
         <ConceptsSection />
