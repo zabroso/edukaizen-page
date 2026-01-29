@@ -1,11 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import UnderConstruction from "@/components/utils/UnderConstruction.astro";
+import ZenHero from "@/components/blog/ZenHero.astro";
+import ZenFeatureGrid from "@/components/blog/ZenFeatureGrid.astro";
+import ZenCertificacionCarousel from "@/components/blog/ZenCertificacionCarousel.astro";
+import InsightsSection from "@/components/utils/InsightsSection.astro";
 ---
 
 <Layout>
-  <UnderConstruction
-    title="Blog en construcción"
-    subtitle="Pronto compartiremos artículos, experiencias y recursos sobre educación, mejora continua y certificaciones."
-  />
+  <section id="zen" class="relative mx-auto max-w-7xl px-6 py-24">
+    <ZenHero />
+    <ZenFeatureGrid />
+    <ZenCertificacionCarousel />
+    <InsightsSection />
+  </section>
 </Layout>

@@ -4,23 +4,31 @@ import ConceptsSection from "@/components/blog/ConceptsSection.astro";
 import SideBar from "@/components/utils/SideBar.astro";
 import InsightsSection from "@/components/utils/InsightsSection.astro";
 import ContactSection from "@/components/utils/ContactSection.astro";
+import eduIcon from "@/assets/edu.svg?raw";
 ---
 
 <Layout>
-  <!-- Fondos -->
-  <div class="absolute inset-0 -z-20 bg-background"></div>
-  <div
-    class="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(240,128,0,0.15),rgba(255,255,255,0))]"
-  >
-  </div>
+  <header id="top" class="mx-auto max-w-7xl px-6 pt-40 pb-12">
+    <div class="flex items-start gap-6">
+      <span
+        class="flex
+          h-20 w-20
+          shrink-0
+          items-center justify-center
+          text-primary
+          transition
+          hover:scale-105"
+        set:html={eduIcon}
+      />
 
-  <!-- Header del blog (fuera del section principal) -->
-  <header class="mx-auto max-w-7xl px-6 pt-40 pb-10">
-    <h1 class="text-4xl font-bold tracking-tight text-foreground">Educación</h1>
-    <p class="mt-2 max-w-2xl text-foreground/70">
-      Ideas clave, enfoques y fundamentos que sustentan el trabajo en educación,
-      mejora continua y procesos de certificación.
-    </p>
+      <div>
+        <h1 class="text-5xl font-bold tracking-tight text-foreground">EDU</h1>
+        <p class="mt-2 max-w-2xl text-foreground/70">
+          Ideas clave, enfoques y fundamentos que sustentan el trabajo en
+          educación, mejora continua y procesos de certificación.
+        </p>
+      </div>
+    </div>
   </header>
 
   <section class="mx-auto flex max-w-7xl gap-10 px-6 pb-16">

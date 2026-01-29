@@ -6,27 +6,41 @@ const navLinks = [
   { name: "Zen", href: "/edukaizen-page/zen" },
   { name: "Contacto", href: "/edukaizen-page/contacto" },
 ];
+
+import edukaizenIcon from "@/assets/favicon.svg?raw";
 ---
 
 <header
-  class="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur border-b border-white/10"
+  class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur"
 >
-  <div class="container h-20 flex items-center justify-between">
-    <a href="/edukaizen-page/" class="font-headline text-3xl font-bold"
-      >EduKaizen</a
-    >
+  <div class="container flex h-20 items-center justify-between">
+    <!-- Logo + Texto -->
+    <div class="flex items-center gap-4">
+      <span
+        class="flex h-14 w-14 shrink-0 items-center justify-center text-primary transition hover:scale-105"
+        set:html={edukaizenIcon}
+      />
 
-    <nav class="hidden md:flex gap-8">
+      <a
+        href="/edukaizen-page/"
+        class="font-headline text-3xl font-bold leading-none"
+      >
+        EduKaizen
+      </a>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="hidden gap-8 md:flex">
       {
         navLinks.map((link) => (
-          <a href={link.href} class="text-muted hover:text-primary">
+          <a href={link.href} class="text-muted transition hover:text-primary">
             {link.name}
           </a>
         ))
       }
     </nav>
 
-    <!-- Mobile toggle simple -->
+    <!-- Mobile -->
     <button id="menuBtn" class="md:hidden">☰</button>
   </div>
 </header>

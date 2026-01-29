@@ -1,0 +1,23 @@
+---
+const { title, description, icon } = Astro.props;
+---
+
+<div
+  class="flex items-start gap-4
+    rounded-xl border border-border
+    bg-background/60 p-5
+    backdrop-blur
+    transition
+    hover:border-primary/40"
+>
+  <!-- TEXTO DERECHO -->
+  <div>
+    <h4 class="text-sm font-semibold text-foreground">
+      {title}
+    </h4>
+
+    <p class="mt-1 text-xs text-foreground/60">
+      {description}
+    </p>
+  </div>
+</div>
