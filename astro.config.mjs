@@ -4,6 +4,6 @@ import react from "@astrojs/react";
 
 export default defineConfig({
   site: "https://zabroso.github.io",
-  base: "edukaizen_page",
+  base: "/edukaizen_page/",
   integrations: [tailwind(), react()],
 });
