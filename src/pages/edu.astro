@@ -2,9 +2,9 @@
 import Layout from "@/layouts/Layout.astro";
 import ConceptsSection from "@/components/blog/ConceptsSection.astro";
 import SideBar from "@/components/utils/SideBar.astro";
-import InsightsSection from "@/components/utils/InsightsSection.astro";
 import ContactSection from "@/components/utils/ContactSection.astro";
 import eduIcon from "@/assets/edu.svg?raw";
+import CategoryPostsSection from "@/components/utils/CategoryPostsSection.astro";
 ---
 
 <Layout>
@@ -36,7 +36,9 @@ import eduIcon from "@/assets/edu.svg?raw";
       items={[
         { label: "Educación", href: "#top" },
         { label: "Conceptos", href: "#conceptos" },
-        { label: "Blog", href: "#blog" },
+        { label: "Iniciativas", href: "#iniciativa" },
+        { label: "Colaboraciones", href: "#colaboracion" },
+        { label: "Noticias", href: "#noticia" },
         { label: "Contacto", href: "#contacto" },
       ]}
     />
@@ -45,8 +47,14 @@ import eduIcon from "@/assets/edu.svg?raw";
         <ConceptsSection />
       </section>
 
-      <section id="blog">
-        <InsightsSection />
+      <section id="iniciativa">
+        <CategoryPostsSection categoria="edu" tag="iniciativa" />
+      </section>
+      <section id="colaboracion">
+        <CategoryPostsSection categoria="edu" tag="colaboracion" />
+      </section>
+      <section id="noticia">
+        <CategoryPostsSection categoria="edu" tag="noticia" />
       </section>
 
       <section id="contacto">

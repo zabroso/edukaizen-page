@@ -2,9 +2,9 @@
 import Layout from "@/layouts/Layout.astro";
 import SideBar from "@/components/utils/SideBar.astro";
 import KaiConceptsSection from "@/components/blog/KaiConceptsSection.astro";
-import InsightsSection from "@/components/utils/InsightsSection.astro";
 import ContactSection from "@/components/utils/ContactSection.astro";
 import kaiIcon from "@/assets/kai.svg?raw";
+import CategoryPostsSection from "@/components/utils/CategoryPostsSection.astro";
 ---
 
 <Layout>
@@ -36,7 +36,8 @@ import kaiIcon from "@/assets/kai.svg?raw";
       items={[
         { label: "Kai", href: "#top" },
         { label: "Conceptos", href: "#conceptos" },
-        { label: "Blog", href: "#blog" },
+        { label: "Iniciativas", href: "#iniciativa" },
+        { label: "Colaboraciones", href: "#colaboracion" },
         { label: "Contacto", href: "#contacto" },
       ]}
     />
@@ -46,8 +47,14 @@ import kaiIcon from "@/assets/kai.svg?raw";
         <KaiConceptsSection />
       </section>
 
-      <section id="blog">
-        <InsightsSection />
+      <section id="iniciativa">
+        <CategoryPostsSection categoria="kai" tag="iniciativa" />
+      </section>
+      <section id="colaboracion">
+        <CategoryPostsSection categoria="kai" tag="colaboracion" />
+      </section>
+      <section id="noticia">
+        <CategoryPostsSection categoria="kai" tag="noticia" />
       </section>
 
       <section id="contacto">

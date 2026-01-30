@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import ZenHero from "@/components/blog/ZenHero.astro";
 import ZenFeatureGrid from "@/components/blog/ZenFeatureGrid.astro";
 import ZenCertificacionCarousel from "@/components/blog/ZenCertificacionCarousel.astro";
-import InsightsSection from "@/components/utils/InsightsSection.astro";
+import CategoryPostsSection from "@/components/utils/CategoryPostsSection.astro";
 ---
 
 <Layout>
@@ -11,6 +11,14 @@ import InsightsSection from "@/components/utils/InsightsSection.astro";
     <ZenHero />
     <ZenFeatureGrid />
     <ZenCertificacionCarousel />
-    <InsightsSection />
+    <section id="iniciativa">
+      <CategoryPostsSection categoria="zen" tag="iniciativa" />
+    </section>
+    <section id="colaboracion">
+      <CategoryPostsSection categoria="zen" tag="colaboracion" />
+    </section>
+    <section id="noticia">
+      <CategoryPostsSection categoria="zen" tag="noticia" />
+    </section>
   </section>
 </Layout>

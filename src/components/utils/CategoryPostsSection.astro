@@ -1,0 +1,87 @@
+---
+import { getPostsByCategories } from "@/lib/wp";
+
+interface Props {
+  categoria: "edu" | "kai" | "zen";
+  tag: "iniciativa" | "colaboracion" | "noticia";
+}
+
+const { categoria, tag } = Astro.props;
+
+const posts = await getPostsByCategories({
+  categoria: categoria,
+  tag: tag,
+  perPage: 3,
+});
+---
+
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <!-- Header -->
+    <div class="mb-10 text-center">
+      <h2 class="font-headline text-3xl font-bold">
+        {categoria.toUpperCase()} · {tag}
+      </h2>
+      <p class="mt-2 text-muted-foreground">
+        Publicaciones relacionadas con {categoria} y {tag}
+      </p>
+    </div>
+
+    {posts.length === 0 && (
+      <p class="text-center text-muted-foreground">
+        No hay publicaciones para estas categorías aún.
+      </p>
+    )}
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <article
+          class="flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card
+                 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
+        >
+          {post.featureImage && (
+            <div class="aspect-video overflow-hidden">
+              <img
+                src={post.featureImage}
+                alt={post.title}
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          )}
+
+          <div class="flex flex-1 flex-col p-6">
+            <!-- Categorías -->
+            <div class="mb-3 flex flex-wrap gap-2">
+              {post.categories.map((cat) => (
+                <span
+                  class="rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary"
+                >
+                  {cat}
+                </span>
+              ))}
+            </div>
+
+            <h3 class="font-headline text-xl font-semibold">
+              {post.title}
+            </h3>
+
+            <div
+              class="mt-2 line-clamp-3 text-muted-foreground prose prose-sm max-w-none"
+              set:html={post.excerpt}
+            />
+
+            <div class="mt-auto pt-4">
+              <a
+                href={`/blog/${post.slug}`}
+                class="text-sm font-medium text-primary hover:underline"
+              >
+                Leer más →
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
