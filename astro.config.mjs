@@ -2,8 +2,12 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
+import netlify from "@astrojs/netlify";
+
+const BASE = import.meta.env.BASE;
+
 export default defineConfig({
-  site: "https://zabroso.github.io",
-  base: "/edukaizen-page/",
+  output: "server",
   integrations: [tailwind(), react()],
+  adapter: netlify(),
 });

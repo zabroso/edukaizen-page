@@ -20,7 +20,7 @@ const posts = await getPosts({ perPage: 10 });
     <!-- Grid -->
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {posts.map((post) => (
-        <a href={`/blog/${post.slug}`} class="block">
+        <a href={`post/${post.slug}`} class="block">
           <article
             class="flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300
                    hover:-translate-y-2 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
@@ -60,7 +60,7 @@ const posts = await getPosts({ perPage: 10 });
               />
 
               <div class="mt-auto pt-4">
-                <span class="text-sm font-medium text-primary">
+                <span class="text-sm font-medium text-primary" >
                   Leer más →
                 </span>
               </div>

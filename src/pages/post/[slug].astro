@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getPostInfo } from "../../lib/wp";
+
+const post = await getPostInfo(Astro.params.slug);
+export const prerender = false;
+---
+
+<Layout>
+  <main class="mx-auto max-w-5xl px-6 pt-40 pb-24">
+    <article
+      class="relative
+        rounded-2xl
+        border border-border
+        bg-background/70
+        backdrop-blur
+        shadow-lg shadow-primary/5
+        overflow-hidden"
+    >
+      <!-- Fondo decorativo -->
+      <div
+        class="absolute inset-0 -z-10
+               bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(240,128,0,0.12),rgba(255,255,255,0))]"
+      >
+      </div>
+
+      <!-- Breadcrumbs -->
+      <nav
+        class="flex flex-wrap items-center gap-2 px-8 pt-8 text-sm text-muted-foreground"
+        aria-label="Breadcrumb"
+      >
+        <a href="/" class="hover:text-primary">Inicio</a>
+        <span>/</span>
+        <a href="/noticias" class="hover:text-primary">Noticias</a>
+        <span>/</span>
+        <span class="text-foreground font-medium">{post.title}</span>
+      </nav>
+
+      <!-- Header -->
+      <header class="px-8 pt-6 pb-10">
+        <h1 class="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+          {post.title}
+        </h1>
+
+        {
+          post.date && (
+            <p class="mt-3 text-sm text-muted-foreground">
+              {new Date(post.date).toLocaleDateString("es-CL", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+          )
+        }
+      </header>
+
+      <!-- Imagen destacada -->
+      {
+        post.featureImage && (
+          <div class="px-8 pb-10">
+            <div class="overflow-hidden rounded-xl border border-border">
+              <img
+                src={post.featureImage}
+                alt={post.title}
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        )
+      }
+
+      <!-- Contenido -->
+      <section
+        class="prose prose-neutral max-w-none
+          px-8 pb-12
+          prose-headings:font-headline
+          prose-a:text-primary
+          prose-a:no-underline
+          hover:prose-a:underline"
+        set:html={post.content}
+      />
+
+      <!-- Footer -->
+      <footer
+        class="flex items-center justify-between border-t border-border px-8 py-6"
+      >
+        <a href="/" class="text-sm font-medium text-primary hover:underline">
+          ← Volver a landing page
+        </a>
+      </footer>
+    </article>
+  </main>
+</Layout>
