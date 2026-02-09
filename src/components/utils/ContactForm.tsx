@@ -39,12 +39,6 @@ export default function ContactForm() {
       return;
     }
 
-    console.log({
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    });
-
     form.reset();
     setErrors({});
     setSubmitted(true);

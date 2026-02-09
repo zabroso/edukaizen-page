@@ -1,4 +1,4 @@
-const domain = "http://localhost:8881";
+const domain = import.meta.env.CMS_DOMAIN;
 const apiUrlPost = `${domain}/wp-json/wp/v2`;
 
 export const getPostInfo = async (slug: string) => {
@@ -17,7 +17,6 @@ export const getPostInfo = async (slug: string) => {
 
 export const getPosts = async ({ perPage = 4 }: { perPage?: number } = {}) => {
   const res = await fetch(`${apiUrlPost}/posts?per_page=${perPage}&_embed`);
-  console.log(apiUrlPost);
 
   if (!res.ok) {
     throw new Error("Failed to fetch posts");
