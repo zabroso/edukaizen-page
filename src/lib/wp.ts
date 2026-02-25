@@ -44,7 +44,7 @@ export const getPosts = async ({ perPage = 4 }: { perPage?: number } = {}) => {
 };
 
 type Category = "edu" | "kai" | "zen";
-type Tag = "iniciativa" | "colaboracion" | "noticia";
+type Tag = "iniciativa" | "colaboracion" | "capsulas";
 
 const CATEGORY_MAP: Record<Category, number> = {
   edu: 3,
@@ -55,7 +55,7 @@ const CATEGORY_MAP: Record<Category, number> = {
 const TAG_MAP: Record<Tag, number> = {
   iniciativa: 9,
   colaboracion: 10,
-  noticia: 11,
+  capsulas: 11,
 };
 
 export const getPostsByCategories = async ({

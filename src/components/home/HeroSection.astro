@@ -1,12 +1,12 @@
 ---
-import eduIcon from '@/assets/edu.svg?raw';
-import kaiIcon from '@/assets/kai.svg?raw';
+import eduIcon from "@/assets/edu.svg?raw";
+import kaiIcon from "@/assets/kai.svg?raw";
 import zenIcon from "@/assets/zen.svg?raw";
 
 const heroIcons = [
-  { icon: eduIcon, title: 'EDU' },
-  { icon: kaiIcon, title: 'KAI' },
-  { icon: zenIcon, title: 'ZEN' },
+  { icon: eduIcon, title: "EDU" },
+  { icon: kaiIcon, title: "KAI" },
+  { icon: zenIcon, title: "ZEN" },
 ];
 ---
 
@@ -14,45 +14,46 @@ const heroIcons = [
   id="home"
   class="relative flex min-h-screen items-center justify-center overflow-hidden py-10 lg:py-32"
 >
-  <div class="absolute inset-0 -z-20 bg-background"></div>
-  <div
-    class="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(240,128,0,0.15),rgba(255,255,255,0))]"
-  ></div>
-
   <div class="container mx-auto px-4 text-center">
-    <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+    <div class="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
       {heroIcons.map((item) => (
         <a
           href="#"
           class="group relative flex aspect-square items-center justify-center"
         >
-          <!-- Contorno siguiendo la silueta de 3 triángulos -->
+          <!-- Overlay -->
           <div
-            class="absolute flex items-center justify-center transition-all duration-300
-                   opacity-0 group-hover:opacity-100
-                   bg-black/50 backdrop-blur-sm"
-            
+            class="absolute inset-0 bg-black/50 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100"
           ></div>
 
-          <!-- Icono -->
+          <!-- Icon -->
           <div
-            class="relative z-10 text-primary blur-0 transition-all duration-300
-                   group-hover:scale-90 group-hover:opacity-20 group-hover:blur-sm"
+            class="
+              relative z-10
+              text-primary
+              transition-all duration-300
+              group-hover:scale-90
+              group-hover:opacity-20
+              group-hover:blur-sm
+
+              w-40 h-40
+              md:w-80 md:h-80  /* 👈 tamaño original en desktop */
+            "
           >
-            <span class="h-12 w-12 text-primary" set:html={item.icon} />
+            <span
+              class="[&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-none"
+              set:html={item.icon}
+            />
           </div>
 
-          <!-- Texto hover -->
+          <!-- Hover text -->
           <div
-            class="absolute inset-0 flex flex-col items-center justify-center
-                   opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           >
             <span class="font-headline text-2xl font-bold tracking-wider text-foreground">
               {item.title}
             </span>
-            <span
-              class="mt-2 text-lg font-semibold text-primary underline underline-offset-4"
-            >
+            <span class="mt-2 text-lg font-semibold text-primary underline underline-offset-4">
               go to blog
             </span>
           </div>

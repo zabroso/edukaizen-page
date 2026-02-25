@@ -4,29 +4,28 @@ const navLinks = [
   { name: "Edu", href: "/edu" },
   { name: "Kai", href: "/kai" },
   { name: "Zen", href: "/zen" },
+  { name: "LH", href: "/lh" },
   { name: "Contacto", href: "/contacto" },
 ];
 
 import edukaizenIcon from "@/assets/favicon.svg?raw";
 ---
 
-<header
-  class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur"
->
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur">
   <div class="container flex h-20 items-center justify-between">
-    <!-- Logo + Texto -->
+    
+    <!-- Logo -->
     <div class="flex items-center gap-4">
       <span
         class="flex h-14 w-14 shrink-0 items-center justify-center text-primary transition hover:scale-105"
         set:html={edukaizenIcon}
       />
-
       <a href="/" class="font-headline text-3xl font-bold leading-none">
         EduKaizen
       </a>
     </div>
 
-    <!-- Navegación -->
+    <!-- Desktop Nav -->
     <nav class="hidden gap-8 md:flex">
       {
         navLinks.map((link) => (
@@ -37,14 +36,56 @@ import edukaizenIcon from "@/assets/favicon.svg?raw";
       }
     </nav>
 
-    <!-- Mobile -->
-    <button id="menuBtn" class="md:hidden">☰</button>
+    <!-- Mobile Button -->
+    <button id="menuBtn" class="md:hidden text-2xl">
+      ☰
+    </button>
   </div>
 </header>
 
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 z-40 hidden bg-black/50 backdrop-blur-sm"></div>
+
+<!-- Mobile Menu -->
+<div
+  id="mobileMenu"
+  class="fixed right-0 top-0 z-50 h-full w-72 translate-x-full bg-background p-8 shadow-xl transition-transform duration-300"
+>
+  <button id="closeBtn" class="mb-8 text-2xl">✕</button>
+
+  <nav class="flex flex-col gap-6">
+    {
+      navLinks.map((link) => (
+        <a href={link.href} class="text-lg text-muted transition hover:text-primary">
+          {link.name}
+        </a>
+      ))
+    }
+  </nav>
+</div>
+
 <script>
   const btn = document.getElementById("menuBtn");
-  btn?.addEventListener("click", () => {
-    alert("Aquí puedes implementar menú móvil o usar React");
+  const closeBtn = document.getElementById("closeBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("overlay");
+
+  function openMenu() {
+    mobileMenu.classList.remove("translate-x-full");
+    overlay.classList.remove("hidden");
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.add("translate-x-full");
+    overlay.classList.add("hidden");
+  }
+
+  btn?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+  overlay?.addEventListener("click", closeMenu);
+
+  // Cerrar al hacer click en un link
+  document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", closeMenu);
   });
 </script>
