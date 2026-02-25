@@ -4,9 +4,9 @@ import kaiIcon from "@/assets/kai.svg?raw";
 import zenIcon from "@/assets/zen.svg?raw";
 
 const heroIcons = [
-  { icon: eduIcon, title: "EDU", href:"/edu" },
-  { icon: kaiIcon, title: "KAI", href:"/kai" },
-  { icon: zenIcon, title: "ZEN", href:"/zen" },
+  { icon: eduIcon, title: "EDU", text:"Educación, innovación y prácticas que impulsan la mejora continua.", href:"/edu" },
+  { icon: kaiIcon, title: "KAI", text:"Gestión estratégica y evolución de procesos liderados por LH.", href:"/kai" },
+  { icon: zenIcon, title: "ZEN", text:"Calidad aplicada con rigor en procesos de acreditación.", href:"/zen" },
 ];
 ---
 
@@ -54,7 +54,7 @@ const heroIcons = [
               {item.title}
             </span>
             <span class="mt-2 text-lg font-semibold text-primary underline underline-offset-4">
-              go to blog
+              {item.text}
             </span>
           </div>
         </a>
