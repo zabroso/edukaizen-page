@@ -4,9 +4,9 @@ import kaiIcon from "@/assets/kai.svg?raw";
 import zenIcon from "@/assets/zen.svg?raw";
 
 const heroIcons = [
-  { icon: eduIcon, title: "EDU" },
-  { icon: kaiIcon, title: "KAI" },
-  { icon: zenIcon, title: "ZEN" },
+  { icon: eduIcon, title: "EDU", href:"/edu" },
+  { icon: kaiIcon, title: "KAI", href:"/kai" },
+  { icon: zenIcon, title: "ZEN", href:"/zen" },
 ];
 ---
 
@@ -18,7 +18,7 @@ const heroIcons = [
     <div class="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
       {heroIcons.map((item) => (
         <a
-          href="#"
+          href={item.href}
           class="group relative flex aspect-square items-center justify-center"
         >
           <!-- Overlay -->
