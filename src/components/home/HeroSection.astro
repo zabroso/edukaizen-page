@@ -12,10 +12,12 @@ const heroIcons = [
 
 <section
   id="home"
-  class="relative flex min-h-screen items-center justify-center overflow-hidden py-10 lg:py-32"
+  class="relative overflow-hidden py-20 lg:py-28"
 >
-  <div class="container mx-auto px-4 text-center">
-    <div class="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
+  <div class="container mx-auto px-4 text-center space-y-20">
+
+    <!-- Icon Grid -->
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
       {heroIcons.map((item) => (
         <a
           href={item.href}
@@ -35,9 +37,8 @@ const heroIcons = [
               group-hover:scale-90
               group-hover:opacity-20
               group-hover:blur-sm
-
               w-40 h-40
-              md:w-80 md:h-80  /* 👈 tamaño original en desktop */
+              md:w-72 md:h-72
             "
           >
             <span
@@ -48,17 +49,31 @@ const heroIcons = [
 
           <!-- Hover text -->
           <div
-            class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            class="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-center px-6"
           >
             <span class="font-headline text-2xl font-bold tracking-wider text-foreground">
               {item.title}
             </span>
-            <span class="mt-2 text-lg font-semibold text-primary underline underline-offset-4">
+            <span class="mt-4 text-base text-primary leading-relaxed max-w-xs">
               {item.text}
             </span>
           </div>
         </a>
       ))}
+    </div>
+
+    <!-- SEO Content -->
+    <div class="max-w-4xl mx-auto space-y-8">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+        Consultoría en educación, gestión de procesos y aseguramiento de la calidad
+      </h1>
+
+      <p class="text-lg md:text-xl text-foreground/70 leading-relaxed">
+        Especialistas en procesos de acreditación, mejora continua y diseño de
+        sistemas de gestión para instituciones de educación superior.
+        Impulsamos excelencia académica mediante planificación estratégica
+        y resultados medibles.
+      </p>
     </div>
   </div>
 </section>

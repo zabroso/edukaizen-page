@@ -1,16 +1,48 @@
 ---
 import ContactForm from "./ContactForm";
-import ContactCard from "./ContactCard.astro";
+
+const profesorImg = process.env.PUBLIC_PROFESOR_IMAGE || "http://localhost:8881/wp-content/uploads/2026/02/1680627556387.jpeg";
+
 ---
 
 <section id="contact" class="py-32 bg-card/20">
-  <div class="container grid lg:grid-cols-2 gap-12">
-    <ContactForm client:load />
-    <ContactCard
-      name="Juan Pérez"
-      phone="+56 9 1234 5678"
-      email="juan.perez@email.com"
-      linkedin="https://www.linkedin.com/in/juanperez"
-    />
+  <div class="container grid gap-16 lg:grid-cols-3 items-start">
+
+    <!-- Perfil Profesor -->
+    <div class="lg:col-span-1 space-y-6 text-center lg:text-left">
+      
+      <div class="mx-auto lg:mx-0 w-48 h-48 rounded-2xl overflow-hidden bg-muted">
+        <!-- Corregir cuando estemos en produccion -->
+        <img
+          src={profesorImg}
+          alt="Profesor Luis Hevia"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold text-foreground">
+          Prof. Luis Hevia
+        </h3>
+
+        <p class="mt-4 text-base text-foreground/70 leading-relaxed">
+          Especialista en acreditación, gestión basada en sistemas y mejora
+          continua en educación superior. Creador de EduKaiZen y
+          acreditador internacional ICACIT.
+        </p>
+      </div>
+
+      <div class="pt-4 space-y-2 text-sm text-foreground/70">
+        <p>Email: contacto@edukaizen.cl</p>
+        <p>LinkedIn: linkedin.com/in/luishevia</p>
+      </div>
+
+    </div>
+
+    <!-- Formulario -->
+    <div class="lg:col-span-2">
+      <ContactForm client:load />
+    </div>
+
   </div>
 </section>
